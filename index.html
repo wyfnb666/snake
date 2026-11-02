@@ -110,11 +110,12 @@
 
   /* ---------- 计分板 ---------- */
   .ledger {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     border-top: 2px solid var(--ink);
     background: var(--paper);
   }
+
+  .ledger .cell { flex: 1 1 0; min-width: 0; }
 
   .ledger .cell {
     padding: 9px 12px 8px;
@@ -411,6 +412,17 @@
         <section class="block">
           <h2>规则</h2>
           <button class="btn" id="btnWrap">穿墙：关</button>
+          <button class="btn" id="btnObstacle" style="margin-top:6px">障碍：关</button>
+        </section>
+
+        <section class="block">
+          <h2>果实</h2>
+          <dl class="keys">
+            <dt>普通</dt><dd>+10 分</dd>
+            <dt>金</dt><dd>+30 分，6 秒消失</dd>
+            <dt>冰</dt><dd>对手减速 2.5 秒</dd>
+            <dt>炸弹</dt><dd>−20 分，缩 2 节</dd>
+          </dl>
         </section>
 
         <section class="block">
